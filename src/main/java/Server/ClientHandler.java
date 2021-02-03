@@ -62,7 +62,7 @@ public class ClientHandler {
                     message.setAuthenticated(true);
                     message.setNick(nick);
                     this.nick = nick;
-                    socket.setSoTimeout(0);
+                    socket.setSoTimeout(0); // при успешной авторизации удаляем таймер с сокета.
 
                     dataOutputStream.writeUTF(new Gson().toJson(message));
                     Message broadcastMsg = new Message();
