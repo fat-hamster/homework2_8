@@ -106,8 +106,8 @@ public class ClientHandler {
                     }
                     String nick = command[1];
                     StringBuilder sbMessage = new StringBuilder();
-                    for (int i = 2; i < command.length; i++) {
-                        sbMessage.append(command[i]);
+                    for (int i = 2; i < command.length; i++) { // Доработал. в лекции этого цикла небыло. однако если сообщение больше чем из одного слова. то без 
+                        sbMessage.append(command[i]);   // цикла отправилось бы только 1 слово :)
                         sbMessage.append(" ");
                     }
                     myServer.sendMessageToClient(this, nick, sbMessage.toString());
